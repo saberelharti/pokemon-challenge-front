@@ -2,7 +2,7 @@ export interface Weather {
 
   temperature: number;
 
-  isRaining: boolean;
+  raining: boolean;
 
-  pokemonName: string;
+  pokemon: string;
 }

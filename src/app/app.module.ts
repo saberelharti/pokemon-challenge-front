@@ -10,21 +10,25 @@ import {MatInputModule} from "@angular/material/input";
 import {FormsModule} from "@angular/forms";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
+import { WeatherDisplayComponent } from './weather-display/weather-display.component';
+import {MatCardModule} from "@angular/material/card";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WeatherDisplayComponent
   ],
-    imports: [
-        BrowserModule,
-        FormsModule,
-        AppRoutingModule,
-        HttpClientModule,
-        BrowserAnimationsModule,
-        MatInputModule,
-        MatButtonModule,
-        MatIconModule
-    ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule,
+    MatCardModule
+  ],
   providers: [WeatherService],
   bootstrap: [AppComponent]
 })

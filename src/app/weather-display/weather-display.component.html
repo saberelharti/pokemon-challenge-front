@@ -1,0 +1,12 @@
+<mat-card>
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Current Weather</mat-card-title>
+    <mat-card-subtitle>{{city}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="https://img.pokemondb.net/artwork/large/{{weather.pokemon}}.jpg" alt="Pokemon">
+  <mat-card-content>
+    <h3>{{weather.temperature}}</h3>
+    <h3>{{weather.raining}}</h3>
+  </mat-card-content>
+</mat-card>
