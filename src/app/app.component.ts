@@ -1,6 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {WeatherService} from "./core/services/weather.service";
 import {Weather} from "./core/interfaces/weather.interface";
+import {catchError, Observable, take} from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -9,19 +10,28 @@ import {Weather} from "./core/interfaces/weather.interface";
 })
 export class AppComponent implements OnInit, OnDestroy {
 
-  title = 'pokemon-challenge-front';
+  city: string;
   weather: Weather;
+  hasError: boolean = false;
 
   constructor(private weatherService: WeatherService) {
   }
 
   ngOnInit(): void {
-    this.weatherService.getWeatherByCity("paris").subscribe((result) => {
-      this.weather = result
-    })
+
   }
 
   ngOnDestroy(): void {
 
+  }
+
+  getWeather() {
+    this.weatherService.getWeatherByCity(this.city)
+      .pipe(take(1), catchError((err, caught) => {
+        this.hasError = true
+        return caught as Observable<Weather>
+      })).subscribe((result) => {
+      this.weather = result
+    })
   }
 }

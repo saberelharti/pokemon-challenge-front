@@ -1,3 +1,8 @@
-<div>
-  {{ weather?.temperature }}
-</div>
+<mat-form-field appearance="fill">
+  <mat-label>City</mat-label>
+  <input matInput type="text" [(ngModel)]="city">
+  <button *ngIf="city" matSuffix mat-icon-button aria-label="Clear" (click)="city=''">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>
+<button mat-raised-button type="button" color="primary" (click)="getWeather()">Get Weather</button>
