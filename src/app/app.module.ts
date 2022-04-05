@@ -12,6 +12,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
 import { WeatherDisplayComponent } from './weather-display/weather-display.component';
 import {MatCardModule} from "@angular/material/card";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {MatCardModule} from "@angular/material/card";
     MatInputModule,
     MatButtonModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatProgressSpinnerModule
   ],
   providers: [WeatherService],
   bootstrap: [AppComponent]

@@ -13,17 +13,21 @@ export class AppComponent {
   city: string;
   weather: Weather;
   hasError: boolean = false;
+  isLoading: boolean = false;
 
   constructor(private weatherService: WeatherService) {
   }
 
   getWeather() {
+    this.isLoading = true;
     this.weatherService.getWeatherByCity(this.city)
       .pipe(take(1), catchError((err, caught) => {
-        this.hasError = true
+        this.hasError = true;
+        this.isLoading = false;
         return of({} as Weather);
       })).subscribe((result) => {
       this.weather = result
+      this.isLoading = false;
     })
   }
 }
