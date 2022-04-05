@@ -17,7 +17,7 @@ export class WeatherService {
   getWeatherByCity(cityName: string): Observable<Weather> {
 
     return this.http.get<Weather>(
-      `${this.apiEndpoint}weather?location=${cityName}`
+      `${this.apiEndpoint}weather?city=${cityName}`
     )
   }
 }

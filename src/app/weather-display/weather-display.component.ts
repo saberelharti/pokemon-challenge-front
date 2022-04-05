@@ -11,9 +11,6 @@ export class WeatherDisplayComponent implements OnInit {
   @Input()
   weather: Weather;
 
-  @Input()
-  city: string;
-
   constructor() { }
 
   ngOnInit(): void {

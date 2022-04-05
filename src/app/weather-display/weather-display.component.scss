@@ -1,4 +1,21 @@
-mat-card {
-  width: 50%;
+.custom-card {
+  width: 30%;
   margin: 2rem auto;
+}
+
+.img-md {
+  width: 20vw;
+  margin: auto;
+}
+
+.title {
+  font-weight: bolder;
+  color: black;
+  margin: 0 16px;
+}
+
+.value {
+  font-weight: bold;
+  color: darkgray;
+  margin: 0 16px;
 }
